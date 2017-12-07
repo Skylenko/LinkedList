@@ -1,0 +1,68 @@
+|№ | Unit     |                       Steps                     |Expected Result                                 |
+
+|1 |Length    |1. Add element in linkedList "test"              |Length equals 1                                 |
+
+|2 |Add       |1. Add element in linkedList "snow"              |Length equals 1                                 |
+ 
+|3 |AddAt     |1. Add element "tree" in linkedList by index 0   |Length equals 1                                 |
+
+|4 |AddAt     |1. Add element "dog" in linkedList by index 0    |                                                |
+|  |          |2. Add element "cat" in linkedList by index 1    |Length equal 2                                  |
+
+|5 |AddAt     |1. Add element "one" in linkedList by index 0    |                                                |
+|  |          |2. Add element "two" in linkedList by index 0    |Length equal 2                                  |
+          
+|6 |Remove    |1. Add element in linkedList "cat"               |                                                |
+|  |          |2. Remove element by value "cat"                 |Length equals 0                                 |
+
+|7 |Remove    |1. Add element in linkedList "spring"            |                                                |
+|  |          |2. Add element in linkedList "summer"            |                                                |
+|  |          |3. Add element in linkedList "winter"            |                                                |
+|  |          |4. Remove element by value "summer"              |Length equals 2                                 |
+
+|8 |Remove    |1. Add element in linkedList "spring"            |                                                |
+|  |          |2. Add element in linkedList "summer"            |                                                |
+|  |          |3. Add element in linkedList "winter"            |                                                |
+|  |          |4. Remove element by value "winter"              |Length equals 2                                 |
+
+|9 |Remove    |1. Add element in linkedList "spring"            |                                                |
+|  |          |2. Add element in linkedList "summer"            |                                                |
+|  |          |3. Add element in linkedList "winter"            |                                                |
+|  |          |4. Remove element by value "spring"              |Length equals 2                                 |
+
+|10|RemoveAt  |1. Add element in linkedList ("element")         |                                                |
+|  |          |2. Remove element by index 0                     |Length equals 0                                 |
+
+|11|RemoveAt  |1. Add element "1" in linkedList by index 0      |                                                |
+|  |          |2. Add element "2" in linkedList by index 1      |                                                |
+|  |          |3. Add element "3" in linkedList by index 2      |                                                |
+|  |          |4. Remove element by index 0                     |Length equals 2                                 |
+
+|12|RemoveAt  |1. Add element "1" in linkedList by index 0      |                                                |
+|  |          |2. Add element "2" in linkedList by index 1      |                                                |
+|  |          |3. Add element "3" in linkedList by index 2      |                                                |
+|  |          |4. Remove element by index 1                     |Length equals 2                                 |
+
+|13|RemoveAt  |1. Add element "1" in linkedList by index 0      |                                                |
+|  |          |2. Add element "2" in linkedList by index 1      |                                                |
+|  |          |3. Add element "3" in linkedList by index 2      |                                                |
+|  |          |4. Remove element by index 2                     |Length equals 2                                 |
+
+|15|ElementAt |1. Add element in linkedList "Sun"               |                                                |
+|  |          |2. Try get element by index 0                    |                                                |
+
+
+|16|ElementAt |1. Add element in linkedList "Live"              |                                                |
+|  |          |2. Remove element "Live:" from linkedList        |                                                |
+|  |          |3. Try get element by index 0                    |Exception "There are not elements by this index"|
+
+|17|ElementAt |1. Add element in linkedList "Black"             |                                                |
+|  |          |2. Add element in linkedList "White"             |                                                |
+|  |          |3. Add element "Red" in linkedList by index 1    |                                                |
+|  |          |4. Try get element by index 1                    |Value equals "Red"                              |
+
+|18|Enumerator|1. Add element "1" in linkedList                 |                                                |
+|  |          |2. Add element "2" in linkedList                 |                                                |
+|  |          |3. Add element "3" in linkedList                 |                                                |
+|  |          |4. Create empty string 'res'                     |                                                |
+|  |          |5. Save in 'res' all elements by using foreach   |String equals "1 2 3"                           |
