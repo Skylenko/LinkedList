@@ -2,15 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace LinkedList
+namespace Epam.Mentoring.Collections
 {
-    public class MyLinkedList<E> : IEnumerable<E>
+    public class LinkedList<E> : IEnumerable<E>
     {
         private int _size;
         private Entry<E> _first;
         private Entry<E> _last;
 
-        internal class Entry<E>
+        private class Entry<E>
         {
             public readonly E Element;
             public Entry<E> Next;
@@ -132,53 +132,19 @@ namespace LinkedList
             return temp;
         }
 
-        public IEnumerator<E> GetEnumerator()
-        {
-            return new MyListEnumerator(_first);
-        }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator();
+            return ((IEnumerable) this).GetEnumerator();
         }
 
-        private class MyListEnumerator : IEnumerator<E>
+        IEnumerator<E> IEnumerable<E>.GetEnumerator()
         {
-            private Entry<E> _currentEntry;
-            private readonly Entry<E> _first;
-
-            public MyListEnumerator(Entry<E> first)
+            Entry<E> current = _first;
+            while (current != null)
             {
-                _first = first;
+                yield return current.Element;
+                current = current.Next;
             }
-
-            public void Dispose()
-            {
-            }
-
-            public bool MoveNext()
-            {
-                if (_currentEntry == null)
-                {
-                    _currentEntry = _first;
-                    Current = _currentEntry.Element;
-                    return true;
-                }
-
-                if (_currentEntry.Next == null) return false;
-                _currentEntry = _currentEntry.Next;
-                Current = _currentEntry.Element;
-                return true;
-            }
-
-            public void Reset()
-            {
-                _currentEntry = _first;
-            }
-
-            public E Current { get; set; }
-
-            object IEnumerator.Current => Current;
         }
     }
 }

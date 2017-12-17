@@ -48,20 +48,20 @@
 |  |          |3. Add element "3" in linkedList by index 2      |                                                |
 |  |          |4. Remove element by index 2                     |Length equals 2                                 |
 
-|15|ElementAt |1. Add element in linkedList "Sun"               |                                                |
-|  |          |2. Try get element by index 0                    |                                                |
+|14|ElementAt |1. Add element in linkedList "Sun"               |                                                |
+|  |          |2. Try get element by index 0                    |Value equals "Sun"                              |
 
 
-|16|ElementAt |1. Add element in linkedList "Live"              |                                                |
+|15|ElementAt |1. Add element in linkedList "Live"              |                                                |
 |  |          |2. Remove element "Live:" from linkedList        |                                                |
 |  |          |3. Try get element by index 0                    |Exception "There are not elements by this index"|
 
-|17|ElementAt |1. Add element in linkedList "Black"             |                                                |
+|16|ElementAt |1. Add element in linkedList "Black"             |                                                |
 |  |          |2. Add element in linkedList "White"             |                                                |
 |  |          |3. Add element "Red" in linkedList by index 1    |                                                |
 |  |          |4. Try get element by index 1                    |Value equals "Red"                              |
 
-|18|Enumerator|1. Add element "1" in linkedList                 |                                                |
+|17|Enumerator|1. Add element "1" in linkedList                 |                                                |
 |  |          |2. Add element "2" in linkedList                 |                                                |
 |  |          |3. Add element "3" in linkedList                 |                                                |
 |  |          |4. Create empty string 'res'                     |                                                |

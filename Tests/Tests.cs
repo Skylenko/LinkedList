@@ -1,43 +1,43 @@
 ﻿using System;
-using LinkedList;
+using Epam.Mentoring.Collections;
 using NUnit.Framework;
 
-namespace Tests
+namespace Epam.Mentoring.Collections.Tests
 {
     [TestFixture]
     public class Tests
     {
-        private MyLinkedList<string> _linkedList;
+        private LinkedList<string> _linkedList;
 
         [SetUp]
         public void Init()
         {
-            _linkedList = new MyLinkedList<string>();
+            _linkedList = new LinkedList<string>();
         }
 
         [Test]
-        public void ShouldReturnLength()
+        public void Length_AddElementInLinkedList_LengthEqualsNumberOfElements()
         {
             _linkedList.Add("test");
             Assert.True(_linkedList.Length().Equals(1));
         }
 
         [Test]
-        public void ShouldAddElement()
+        public void Add_AddElement_LengthIsChanged()
         {
             _linkedList.Add("snow");
             Assert.True(_linkedList.Length().Equals(1));
         }
 
         [Test]
-        public void ShouldAddElementByIndex()
+        public void AddAt_AddOneElementByIndex_LengthEqualsOne()
         {
             _linkedList.AddAt(0, "tree");
             Assert.True((_linkedList.Length().Equals(1)));
         }
 
         [Test]
-        public void ShouldAddSecondElementByIndex()
+        public void AddAt_AddTwoElementsByDeferentIndexes_LengthEqualsTwo()
         {
             _linkedList.AddAt(0, "dog");
             _linkedList.AddAt(1, "cat");
@@ -45,7 +45,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldAddSecondElementBySameIndex()
+        public void AddAt_AddTwoElementsBySameIndex_LengthEqualsTwo()
         {
             _linkedList.AddAt(0, "one");
             _linkedList.AddAt(0, "two");
@@ -53,7 +53,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveElement()
+        public void Remove_RemoveElementByValue_LengthDecreasedByOne()
         {
             _linkedList.Add("cat");
             _linkedList.Remove("cat");
@@ -61,7 +61,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveMidleElement()
+        public void Remove_RemoveMiddleElementByValue_LengthDecreasedByOne()
         {
             _linkedList.Add("spring");
             _linkedList.Add("summer");
@@ -71,7 +71,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveLastElement()
+        public void Remove_RemoveLastElementByValue_LengthDecreasedByOne()
         {
             _linkedList.Add("spring");
             _linkedList.Add("summer");
@@ -81,7 +81,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveFirstElement()
+        public void Remove_RemoveFirstElementByValue_LengthDecreasedByOne()
         {
             _linkedList.Add("spring");
             _linkedList.Add("summer");
@@ -91,7 +91,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveElementByIndex()
+        public void RemoveAt_RemoveElementByIndex_LengthDecreasedByOne()
         {
             _linkedList.Add("element");
             _linkedList.RemoveAt(0);
@@ -99,7 +99,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveElementByFirstIndex()
+        public void RemoveAt_RemoveElementByFirstIndex_LengthDecreasedByOne()
         {
             _linkedList.Add("1");
             _linkedList.Add("2");
@@ -109,7 +109,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveElementByMidleIndex()
+        public void RemoveAt_RemoveElementByMiddleIndex_LengthDecreasedByOne()
         {
             _linkedList.Add("1");
             _linkedList.Add("2");
@@ -119,7 +119,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldRemoveElementByLastIndex()
+        public void RemoveAt_RemoveElementByLastIndex_LengthDecreasedByOne()
         {
             _linkedList.Add("1");
             _linkedList.Add("2");
@@ -129,7 +129,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldShowElementByIndex()
+        public void ElementAt_GetValueByIndex_ValueEqualsValueByIndex()
         {
             _linkedList.Add("Sun");
             var o = _linkedList.ElementAt(0);
@@ -137,7 +137,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldNotShowElementByNullIndex()
+        public void ElementAt_GetValueByEmptyIndex_ThrowException()
         {
             Exception exception = null;
             _linkedList.Add("Live");
@@ -155,7 +155,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldShowElementByIndexAfterChangedValue()
+        public void ElementAt_GetValueWhichWasAddedInNonEmptyIndex_ValueEqualsValueByIndex()
         {
             _linkedList.Add("Black");
             _linkedList.Add("White");
@@ -165,7 +165,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldWorkForeach()
+        public void Enumerator_UseForeach_AllElementsAreDisplyed()
         {
             _linkedList.Add("1");
             _linkedList.Add("2");
@@ -178,8 +178,8 @@ namespace Tests
                 res += " " + element;
             }
 
-            var trim = res.Trim();
-            Assert.AreEqual(trim, "1 2 3");
+            var result = res.Trim();
+            Assert.AreEqual(result, "1 2 3");
         }
     }
 }
